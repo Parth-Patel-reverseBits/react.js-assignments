@@ -1,5 +1,11 @@
+import Form from "./components/Molecules/Form";
+
 const App = () => {
-  return <div>React App</div>;
+  return (
+    <div className="w-full h-screen flex justify-center items-center">
+      <Form />
+    </div>
+  );
 };
 
 export default App;
