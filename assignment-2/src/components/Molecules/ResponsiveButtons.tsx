@@ -11,6 +11,9 @@ const ResponsiveButtons = () => {
       <h1 className="text-4xl font-bold text-center pt-20 ">
         Responsive Buttons
       </h1>
+      <h2 className="text-center mt-10 font-medium text-[18px]">
+        Resize the window to see changes
+      </h2>
       <div className="flex justify-center mt-30 gap-3">
         {windowWidth < 640 ? (
           <Button>{"SM"}</Button>
@@ -26,6 +29,7 @@ const ResponsiveButtons = () => {
           <Button>{"2XL"}</Button>
         )}
       </div>
+      <div className="text-center mt-10 ">Window Width: {windowWidth}px</div>
     </div>
   );
 };
