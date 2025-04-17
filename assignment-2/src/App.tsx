@@ -3,6 +3,7 @@ import { fetchSingleTodo } from "./api/todos";
 import Form from "./components/Molecules/Form";
 import useForm from "./hooks/useForm";
 import useLocalStorage from "./hooks/useLocalStorage";
+import ResponsiveButtons from "./components/Molecules/ResponsiveButtons";
 
 const App = () => {
   const { email, setEmail, setNumberDigit, numberDigit, setTodo, todo } =
@@ -74,6 +75,9 @@ const App = () => {
         {todos.map((item, index) => (
           <h3 key={index}>{item}</h3>
         ))}
+      </div>
+      <div>
+        <ResponsiveButtons />
       </div>
     </>
   );
