@@ -1,20 +1,38 @@
-import Input from "../Atoms/Input";
 import Button from "../Atoms/Button";
-import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import Input from "../Atoms/Input";
+import Label from "../Atoms/Label";
 
-const Form = () => {
-  const [inputValue, setInputValue] = useState<string>("");
-  const onSubmitClick = () => {
-    useFetch(`https://jsonplaceholder.typicode.com/todos/${inputValue}`);
-  };
+interface TypeProps {
+  label?: string;
+  type: string;
+  value: string | number | undefined;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmitClick: () => void;
+  placeholder: string;
+  buttonValues?: string;
+}
+
+const Form = ({
+  type,
+  value,
+  handleChange,
+  onSubmitClick,
+  label,
+  placeholder,
+  buttonValues = "Submit",
+}: TypeProps) => {
+  // console.log(first)
   return (
     <div>
+      <Label label={label} />
       <Input
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        placeholder={placeholder}
+        type={type}
+        min={0}
+        value={value}
+        onChange={handleChange}
       />
-      <Button onClick={onSubmitClick}>Submit</Button>
+      <Button onClick={onSubmitClick}>{buttonValues}</Button>
     </div>
   );
 };

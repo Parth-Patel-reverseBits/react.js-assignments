@@ -1,6 +1,7 @@
 import axios from "axios";
 
-async function useFetch(url: string) {
+export default async function useFetch(url: string) {
+  const data: unknown[] = [];
   try {
     const response = await axios.get(url);
     const data = await response.data;
@@ -10,6 +11,5 @@ async function useFetch(url: string) {
   } finally {
     console.log("Finally block");
   }
+  return { data };
 }
-
-export default useFetch;
