@@ -1,9 +1,11 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { fetchSingleTodo } from "./api/todos";
 import Form from "./components/Molecules/Form";
 import useForm from "./hooks/useForm";
 import useLocalStorage from "./hooks/useLocalStorage";
 import ResponsiveButtons from "./components/Molecules/ResponsiveButtons";
+import EventManagment from "./components/Molecules/EventManagment";
+import GeoLocation from "./components/Molecules/GeoLocation";
 
 const App = () => {
   const { email, setEmail, setNumberDigit, numberDigit, setTodo, todo } =
@@ -78,6 +80,12 @@ const App = () => {
       </div>
       <div>
         <ResponsiveButtons />
+      </div>
+      <div>
+        <EventManagment />
+      </div>
+      <div>
+        <GeoLocation />
       </div>
     </>
   );

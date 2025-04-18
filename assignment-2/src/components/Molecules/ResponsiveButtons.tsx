@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../Atoms/Button";
 
 const ResponsiveButtons = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   window.addEventListener("resize", () => {
     setWindowWidth(window.innerWidth);
   });

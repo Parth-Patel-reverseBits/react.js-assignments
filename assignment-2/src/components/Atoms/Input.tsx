@@ -16,7 +16,7 @@ const Input = ({ value, onChange, placeholder, type }: InputProps) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        autoFocus
+        // autoFocus
         onFocus={(e) => {
           e.preventDefault();
         }}
