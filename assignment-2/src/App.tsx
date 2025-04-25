@@ -8,6 +8,8 @@ import EventManagment from "./components/Molecules/EventManagment";
 import GeoLocation from "./components/Molecules/GeoLocation";
 
 const App = () => {
+  console.log(document.getElementById("keyboard-event")?.scrollTop);
+
   const { email, setEmail, setNumberDigit, numberDigit, setTodo, todo } =
     useForm();
 
