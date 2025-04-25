@@ -58,7 +58,7 @@ const PersonalInformationForm: React.FC<PersonalInformationFormProps> = ({
       <FormField
         label="Email Address"
         name="email"
-        value={formData.firstName}
+        value={formData.email}
         onChange={onChange}
         error={errors.firstName}
         placeholder="Enter your email address"
