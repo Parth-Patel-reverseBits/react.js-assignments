@@ -8,7 +8,7 @@ interface FormData {
   lastName: string;
   email: string;
   dob: string;
-  phone: string;
+  phone: number;
   address: string;
   city: string;
   state: string;
@@ -51,7 +51,7 @@ const PersonalInformationForm: React.FC<PersonalInformationFormProps> = ({
           name="lastName"
           value={formData.lastName}
           onChange={onChange}
-          error={errors.firstName}
+          error={errors.lastName}
           placeholder="Enter your name"
         />
       </FormRow>
@@ -60,7 +60,7 @@ const PersonalInformationForm: React.FC<PersonalInformationFormProps> = ({
         name="email"
         value={formData.email}
         onChange={onChange}
-        error={errors.firstName}
+        // error={errors.firstName}
         placeholder="Enter your email address"
       />
       <DateField />

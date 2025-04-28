@@ -4,6 +4,8 @@ interface InputProps {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
+  min?: number;
+  max?: number;
 }
 
 const Input = ({
@@ -12,6 +14,8 @@ const Input = ({
   value,
   onChange,
   placeholder,
+  min,
+  max,
 }: InputProps) => {
   return (
     <div className="w-full">
@@ -21,8 +25,10 @@ const Input = ({
         required
         type={type}
         name={name}
-        value={value}
+        value={min === 10 && max == 10 ? parseInt(value) : value}
         onChange={onChange}
+        min={min}
+        max={max}
       />
     </div>
   );

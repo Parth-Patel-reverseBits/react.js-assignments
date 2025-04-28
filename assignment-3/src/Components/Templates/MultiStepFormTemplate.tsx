@@ -1,8 +1,9 @@
 // import React from "react";
-import PersonalInformationForm from "../organisms/PersonalInformationForm";
-// import FormNavigation from "../organisms/FormNavigation";
+import PersonalInformationForm from "../Organisms/PersonalInformationForm";
 // import ProgressIndicator from "../molecules/ProgressIndicator";
 import React from "react";
+import ContactDetailsForm from "../Organisms/ContactDetailsForm";
+import FormNavigation from "../Organisms/FormNavigation";
 
 interface MultiStepFormTemplateProps {
   step: number;
@@ -41,7 +42,7 @@ const MultiStepFormTemplate: React.FC<MultiStepFormTemplateProps> = ({
           />
         )}
 
-        {/* {step === 2 && (
+        {step === 2 && (
           <ContactDetailsForm
             formData={formData}
             onChange={onChange}
@@ -54,7 +55,7 @@ const MultiStepFormTemplate: React.FC<MultiStepFormTemplateProps> = ({
           onNext={onNext}
           currentStep={step}
           totalSteps={steps.length}
-        /> */}
+        />
       </form>
     </div>
   );

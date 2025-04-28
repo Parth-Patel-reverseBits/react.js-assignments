@@ -9,11 +9,13 @@ interface FormField {
   value: string;
   type?: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  error?: boolean;
+  error?: string;
   helperText?: string;
   options?: string[]; // if this is for select fields or radio buttons
   placeholder: string;
-  onClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  min?: number;
+  max?: number;
 }
 
 const FormField = ({
@@ -25,8 +27,10 @@ const FormField = ({
   error,
   helperText,
   placeholder,
-  options = [],
-}: FormField) => {
+  min,
+  max,
+}: // options = [],
+FormField) => {
   return (
     <div className="w-full mt-8">
       <Label children={label} />
@@ -36,6 +40,8 @@ const FormField = ({
         name={name}
         value={value}
         onChange={onChange}
+        min={min}
+        max={max}
       />
       {helperText && <HelperText text={helperText} />}
       {error && <ErrorMessage text={error} />}
